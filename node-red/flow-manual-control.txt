@@ -1,0 +1,387 @@
+[{
+    "id": "83879fa.d0d506",
+    "type": "serial out",
+    "z": "daafec12.96003",
+    "name": "Robot-serial",
+    "serial": "704ca14f.103cb",
+    "x": 890,
+    "y": 400,
+    "wires": []
+}, {
+    "id": "d21ec79b.43f968",
+    "type": "inject",
+    "z": "daafec12.96003",
+    "name": "Body down (5)",
+    "topic": "",
+    "payload": "5",
+    "payloadType": "str",
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "x": 250,
+    "y": 440,
+    "wires": [
+        ["fe0c7086.879b8"]
+    ]
+}, {
+    "id": "121dada3.46c7e2",
+    "type": "debug",
+    "z": "daafec12.96003",
+    "name": "",
+    "active": true,
+    "console": "false",
+    "complete": "payload",
+    "x": 890,
+    "y": 460,
+    "wires": []
+}, {
+    "id": "6d2ce395.42414c",
+    "type": "inject",
+    "z": "daafec12.96003",
+    "name": "Standby (1)",
+    "topic": "",
+    "payload": "1",
+    "payloadType": "str",
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "x": 190,
+    "y": 260,
+    "wires": [
+        ["fe0c7086.879b8"]
+    ]
+}, {
+    "id": "fc1facb5.4b882",
+    "type": "comment",
+    "z": "daafec12.96003",
+    "name": "Basic:",
+    "info": "",
+    "x": 130,
+    "y": 180,
+    "wires": []
+}, {
+    "id": "33c935cf.566e4a",
+    "type": "inject",
+    "z": "daafec12.96003",
+    "name": "Sleep (0)",
+    "topic": "",
+    "payload": "0",
+    "payloadType": "str",
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "x": 180,
+    "y": 220,
+    "wires": [
+        ["fe0c7086.879b8"]
+    ]
+}, {
+    "id": "f72c3a0c.a3e158",
+    "type": "inject",
+    "z": "daafec12.96003",
+    "name": "Body up (4)",
+    "topic": "",
+    "payload": "4",
+    "payloadType": "str",
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "x": 250,
+    "y": 400,
+    "wires": [
+        ["fe0c7086.879b8"]
+    ]
+}, {
+    "id": "5dd2d8f9.ffe178",
+    "type": "inject",
+    "z": "daafec12.96003",
+    "name": "Body right (2)",
+    "topic": "",
+    "payload": "2",
+    "payloadType": "str",
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "x": 250,
+    "y": 320,
+    "wires": [
+        ["fe0c7086.879b8"]
+    ]
+}, {
+    "id": "6353c284.cb777c",
+    "type": "inject",
+    "z": "daafec12.96003",
+    "name": "Body left (3)",
+    "topic": "",
+    "payload": "3",
+    "payloadType": "str",
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "x": 250,
+    "y": 360,
+    "wires": [
+        ["fe0c7086.879b8"]
+    ]
+}, {
+    "id": "9f4d13bc.4f8be",
+    "type": "inject",
+    "z": "daafec12.96003",
+    "name": "Arm up (6)",
+    "topic": "",
+    "payload": "6",
+    "payloadType": "str",
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "x": 300,
+    "y": 500,
+    "wires": [
+        ["fe0c7086.879b8"]
+    ]
+}, {
+    "id": "3e50fe03.7a9222",
+    "type": "inject",
+    "z": "daafec12.96003",
+    "name": "Arm down (7)",
+    "topic": "",
+    "payload": "7",
+    "payloadType": "str",
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "x": 310,
+    "y": 540,
+    "wires": [
+        ["fe0c7086.879b8"]
+    ]
+}, {
+    "id": "2da7c1dd.94e26e",
+    "type": "inject",
+    "z": "daafec12.96003",
+    "name": "Hand up (8)",
+    "topic": "",
+    "payload": "8",
+    "payloadType": "str",
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "x": 370,
+    "y": 600,
+    "wires": [
+        ["fe0c7086.879b8"]
+    ]
+}, {
+    "id": "4ff33d41.3b20c4",
+    "type": "inject",
+    "z": "daafec12.96003",
+    "name": "Hand down (9)",
+    "topic": "",
+    "payload": "9",
+    "payloadType": "str",
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "x": 380,
+    "y": 640,
+    "wires": [
+        ["fe0c7086.879b8"]
+    ]
+}, {
+    "id": "11b8d6.8662672a",
+    "type": "inject",
+    "z": "daafec12.96003",
+    "name": "Gripper open (o)",
+    "topic": "",
+    "payload": "o",
+    "payloadType": "str",
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "x": 420,
+    "y": 700,
+    "wires": [
+        ["fe0c7086.879b8"]
+    ]
+}, {
+    "id": "f5175385.efdb1",
+    "type": "inject",
+    "z": "daafec12.96003",
+    "name": "Gripper close (p)",
+    "topic": "",
+    "payload": "p",
+    "payloadType": "str",
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "x": 420,
+    "y": 740,
+    "wires": [
+        ["fe0c7086.879b8"]
+    ]
+}, {
+    "id": "fe0c7086.879b8",
+    "type": "function",
+    "z": "daafec12.96003",
+    "name": "Command Hub",
+    "func": "\nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "x": 660,
+    "y": 400,
+    "wires": [
+        ["121dada3.46c7e2", "83879fa.d0d506"]
+    ]
+}, {
+    "id": "7de8ad8.d8c1454",
+    "type": "inject",
+    "z": "daafec12.96003",
+    "name": "Lightsaber Side Up(s)",
+    "topic": "",
+    "payload": "s",
+    "payloadType": "str",
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "x": 280,
+    "y": 900,
+    "wires": [
+        ["fe0c7086.879b8"]
+    ]
+}, {
+    "id": "7220a007.c9d12",
+    "type": "inject",
+    "z": "daafec12.96003",
+    "name": "Start Record(q)",
+    "topic": "",
+    "payload": "q",
+    "payloadType": "str",
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "x": 780,
+    "y": 860,
+    "wires": [
+        ["fe0c7086.879b8"]
+    ]
+}, {
+    "id": "86cff4ec.0b4898",
+    "type": "inject",
+    "z": "daafec12.96003",
+    "name": "Record current Pose(e)",
+    "topic": "",
+    "payload": "w",
+    "payloadType": "str",
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "x": 800,
+    "y": 900,
+    "wires": [
+        []
+    ]
+}, {
+    "id": "c6f7565f.5a1e38",
+    "type": "comment",
+    "z": "daafec12.96003",
+    "name": "Record Utility:",
+    "info": "",
+    "x": 730,
+    "y": 820,
+    "wires": []
+}, {
+    "id": "315760b7.8f609",
+    "type": "inject",
+    "z": "daafec12.96003",
+    "name": "Lightsaber Standby(a)",
+    "topic": "",
+    "payload": "a",
+    "payloadType": "str",
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "x": 220,
+    "y": 860,
+    "wires": [
+        ["fe0c7086.879b8"]
+    ]
+}, {
+    "id": "11e5db4a.26acd5",
+    "type": "comment",
+    "z": "daafec12.96003",
+    "name": "Single Pose",
+    "info": "",
+    "x": 150,
+    "y": 820,
+    "wires": []
+}, {
+    "id": "7fed7168.4eba8",
+    "type": "comment",
+    "z": "daafec12.96003",
+    "name": "Sequence Pose",
+    "info": "",
+    "x": 160,
+    "y": 960,
+    "wires": []
+}, {
+    "id": "200753ac.d2e55c",
+    "type": "inject",
+    "z": "daafec12.96003",
+    "name": "Sequence 1 (z)",
+    "topic": "",
+    "payload": "z",
+    "payloadType": "str",
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "x": 200,
+    "y": 1000,
+    "wires": [
+        ["fe0c7086.879b8"]
+    ]
+}, {
+    "id": "d888a5c5.c4e798",
+    "type": "inject",
+    "z": "daafec12.96003",
+    "name": "Sequence 2 (x)",
+    "topic": "",
+    "payload": "x",
+    "payloadType": "str",
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "x": 200,
+    "y": 1040,
+    "wires": [
+        ["fe0c7086.879b8"]
+    ]
+}, {
+    "id": "2e853dc1.d9ded2",
+    "type": "inject",
+    "z": "daafec12.96003",
+    "name": "Sequence 3 (c)",
+    "topic": "",
+    "payload": "c",
+    "payloadType": "str",
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "x": 200,
+    "y": 1080,
+    "wires": [
+        ["fe0c7086.879b8"]
+    ]
+}, {
+    "id": "704ca14f.103cb",
+    "type": "serial-port",
+    "z": "",
+    "serialport": "/dev/cu.usbserial-AH05SKTW",
+    "serialbaud": "9600",
+    "databits": "8",
+    "parity": "none",
+    "stopbits": "1",
+    "newline": "\\n",
+    "bin": "false",
+    "out": "char",
+    "addchar": false
+}]

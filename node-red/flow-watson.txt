@@ -1,0 +1,129 @@
+[{
+    "id": "3def5057.8c7e5",
+    "type": "watson-speech-to-text",
+    "z": "ad4b3fb9.8bc44",
+    "name": "",
+    "continuous": true,
+    "speakerlabels": false,
+    "lang": "en-US",
+    "langhidden": "en-US",
+    "langcustom": "NoCustomisationSetting",
+    "langcustomhidden": "NoCustomisationSetting",
+    "band": "BroadbandModel",
+    "bandhidden": "BroadbandModel",
+    "password": "",
+    "payload-response": true,
+    "default-endpoint": true,
+    "service-endpoint": "https://stream.watsonplatform.net/speech-to-text/api",
+    "x": 240,
+    "y": 220,
+    "wires": [
+        ["79f73fe8.ff759"]
+    ]
+}, {
+    "id": "79f73fe8.ff759",
+    "type": "watson-conversation-v1",
+    "z": "ad4b3fb9.8bc44",
+    "name": "",
+    "workspaceid": "66b8794e-58cc-4b9a-bde2-443fdd6d32ba",
+    "multiuser": false,
+    "context": true,
+    "default-endpoint": true,
+    "service-endpoint": "https://gateway.watsonplatform.net/conversation/api",
+    "x": 330,
+    "y": 280,
+    "wires": [
+        ["17be4f4.0c198b1", "7df148f6.4cd6d8"]
+    ]
+}, {
+    "id": "17be4f4.0c198b1",
+    "type": "function",
+    "z": "ad4b3fb9.8bc44",
+    "name": "Watson Translater",
+    "func": "var action = msg.payload.context.arm_action;\n\n\nif(action == \"sleep\") msg.payload = \"0\";\nelse if(action == \"standby\") msg.payload = \"1\";\nelse if(action == \"body_right\") msg.payload = \"2\";\nelse if(action == \"body_left\") msg.payload = \"3\";\nelse if(action == \"body_up\") msg.payload = \"4\";\nelse if(action == \"body_down\") msg.payload = \"5\";\nelse if(action == \"arm_up\") msg.payload = \"6\";\nelse if(action == \"arm_down\") msg.payload = \"7\";\nelse if(action == \"hand_up\") msg.payload = \"8\";\nelse if(action == \"hand_down\") msg.payload = \"9\";\nelse if(action == \"gripper_open\") msg.payload = \"o\";\nelse if(action == \"gripper_close\") msg.payload = \"p\";\nelse if(action == \"light_saber\") msg.payload = \"a\";\nelse msg.payload = \"-1\";\n\n\n\nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "x": 570,
+    "y": 320,
+    "wires": [
+        ["f1c18018.0068a"]
+    ]
+}, {
+    "id": "7df148f6.4cd6d8",
+    "type": "function",
+    "z": "ad4b3fb9.8bc44",
+    "name": "Watson Translater Debug",
+    "func": "msg.payload = {\"speech\":msg.payload.input.text, \"action\":msg.payload.context.arm_action};\n\n\nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "x": 590,
+    "y": 380,
+    "wires": [
+        ["15e33f0c.d35c11"]
+    ]
+}, {
+    "id": "15e33f0c.d35c11",
+    "type": "debug",
+    "z": "ad4b3fb9.8bc44",
+    "name": "",
+    "active": true,
+    "console": "false",
+    "complete": "payload",
+    "x": 930,
+    "y": 380,
+    "wires": []
+}, {
+    "id": "772cca36.09cdc4",
+    "type": "serial out",
+    "z": "ad4b3fb9.8bc44",
+    "name": "Robot-serial",
+    "serial": "704ca14f.103cb",
+    "x": 930,
+    "y": 320,
+    "wires": []
+}, {
+    "id": "f1c18018.0068a",
+    "type": "switch",
+    "z": "ad4b3fb9.8bc44",
+    "name": "",
+    "property": "payload",
+    "propertyType": "msg",
+    "rules": [{
+        "t": "neq",
+        "v": "-1",
+        "vt": "str"
+    }, {
+        "t": "else"
+    }],
+    "checkall": "true",
+    "outputs": 2,
+    "x": 750,
+    "y": 320,
+    "wires": [
+        ["772cca36.09cdc4"],
+        []
+    ]
+}, {
+    "id": "990b627c.e9d42",
+    "type": "microphone",
+    "z": "ad4b3fb9.8bc44",
+    "name": "",
+    "x": 150,
+    "y": 160,
+    "wires": [
+        ["3def5057.8c7e5"]
+    ]
+}, {
+    "id": "704ca14f.103cb",
+    "type": "serial-port",
+    "z": "",
+    "serialport": "/dev/cu.usbserial-AH05SKTW",
+    "serialbaud": "9600",
+    "databits": "8",
+    "parity": "none",
+    "stopbits": "1",
+    "newline": "\\n",
+    "bin": "false",
+    "out": "char",
+    "addchar": false
+}]
