@@ -9,7 +9,7 @@ This demo will help you to build your own robot arm and control it through voice
 ## Setting up your ArbotiX & Arduino Software
 Once you have the arm, follow the ArbotiX Robocontroller Getting Started Guide to setup and program your Arbotix-M Robocontroller.
 
-##Set Dynamical IDs
+## Set Dynamic IDs
 
 Before starting to assemble the arm, you will need to set DYNAMICAL IDs for all servos. You can learn how to ID servos here. If you have an issue with the DynaManager, There are alternative options like using Arduino library, Dynamical Serial.
 
