@@ -1,7 +1,7 @@
 [{
     "id": "daafec12.96003",
     "type": "tab",
-    "label": "Manaul Control",
+    "label": "Manual Control",
     "disabled": false,
     "info": ""
 }, {
