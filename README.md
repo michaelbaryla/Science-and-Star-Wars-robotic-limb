@@ -1,6 +1,6 @@
 Science and Star Wars Robotic Arm Demo
 
-##Overview:
+##Overview
 
 This demo will help you to build your own robot arm and control it through voice commands with Watson Speech-to-Text and Watson Conversation services.  We will leverage Node-RED, a visual tool for the Internet of Things and the PhantomX Reactor Arm from Trodden Robotics. The PhantomX was designed with entry-level research and university use in mind providing one of the highest featured consumer robotic arms on the market. The Phantom X arm can be ordered here. This demo uses the ‘No Wrist Rotate’ kit type, but the ‘W/ Wrist Rotate’ type can be supported by editing the provided code.
 
@@ -10,21 +10,26 @@ This demo will help you to build your own robot arm and control it through voice
 Once you have the arm, follow the ArbotiX Robocontroller Getting Started Guide to setup and program your Arbotix-M Robocontroller.
 
 ##Set Dynamical IDs
+
 Before starting to assemble the arm, you will need to set DYNAMICAL IDs for all servos. You can learn how to ID servos here. If you have an issue with the DynaManager, There are alternative options like using Arduino library, Dynamical Serial.
 
 ##Assemble your robot
+
 Follow the detailed instructions for assembling the arm using <a href="http://learn.trossenrobotics.com/projects/165-phantomx-reactor-arm-assembly-guide.html">Trossen’s Assembly Guide</a>. Trossen Robotics provides a <a href="http://learn.trossenrobotics.com/interbotix/robot-arms/17reactor-robot-arm/26-phantomx-reactor-robot-arm-build-check">test program</a> to make sure your robot has been programmed and assembled correctly.
 
 ##Upload code to the arm
+
 Download or clone the arduino code within the robotic-arm folder and upload to the Robot Arm. Once the robot is programmed and powered, it moves to center position as ‘Stand by’ pose.
 
-The Serial Monitor on Arduino would display control options as below. Type a letter for each control then you’ll see each action on your arm. Make sure you have ‘9600 baud' for the serial command sender option.
+The Serial Monitor on Arduino should display control options as below. Type a letter for each control then you’ll see each action on your arm. Make sure you have ‘9600 baud' for the serial command sender option.
 ![screenshot_351](https://user-images.githubusercontent.com/4265959/32201985-175e315c-bdb0-11e7-92ab-e751fb67fd90.png)
 
 
 
 ##Create a Bluemix account
+
     * [Sign up](https://console.ng.bluemix.net/registration/?target=/catalog/%3fcategory=watson) in Bluemix, or use an existing account. Your account must have available space for at least 1 app and 1 service.
+    
 * Make sure that you have the following prerequisites installed:
     * The [Node.js](https://nodejs.org/#download) runtime, including the [npm][npm_link] package manager
     * The [Cloud Foundry][cloud_foundry] command-line client
@@ -57,18 +62,18 @@ You can use an exisiting instance of the Conversation service. Otherwise, follow
 
 1. In your browser, navigate to [your Bluemix console] (https://console.ng.bluemix.net/dashboard/services).
 
-1. From the **All Items** tab, click the newly created Conversation service in the **Services** list.
+2. From the **All Items** tab, click the newly created Conversation service in the **Services** list.
 
 
-1. On the Service Details page, click **Launch tool**.
+3. On the Service Details page, click **Launch tool**.
 
-1. Click the **Import workspace** icon in the Conversation service tool. Specify the location of the workspace JSON file in your local copy of the app project:
+4. Click the **Import workspace** icon in the Conversation service tool. Specify the location of the workspace JSON file in your local copy of the app project:
 
     `<project_root>/workspace-robot-arm.json`
 
-1. Select **Everything (Intents, Entities, and Dialog)** and then click **Import**. The robot arm workspace is created.
+5. Select **Everything (Intents, Entities, and Dialog)** and then click **Import**. The robot arm workspace is created.
 
-1. Retrieve the credentials from the service key using the command `cf service-key <service_instance> <service_key>`. For example:
+6. Retrieve the credentials from the service key using the command `cf service-key <service_instance> <service_key>`. For example:
 
     ```bash
     cf service-key my-conversation-service myKey
@@ -84,10 +89,10 @@ You can use an exisiting instance of the Conversation service. Otherwise, follow
     }
     ```
 
-1. Paste  the `password` and `username` values (without quotation marks) from the JSON into a scratch file for use within Node-RED.
+7. Paste  the `password` and `username` values (without quotation marks) from the JSON into a scratch file for use within Node-RED.
 
 
-5. Create and retrieve service keys to access the [Speech to Text][service_url] service:
+8. Create and retrieve service keys to access the [Speech to Text][service_url] service:
 
   ```none
   cf create-service speech_to_text standard my-stt-service
@@ -95,7 +100,7 @@ You can use an exisiting instance of the Conversation service. Otherwise, follow
   cf service-key my-stt-service myKey
   ```
 
-1. Save  the `password` and `username` values (without quotation marks) for your credentials into a scratch file for use within Node-RED.
+9. Save  the `password` and `username` values (without quotation marks) for your credentials into a scratch file for use within Node-RED.
 
 
 ##Setup Node-RED with IBM Watson
@@ -111,7 +116,8 @@ Open Terminal application and type ‘node-red’. This would launch Node-Red.
 
 You’ll see a Server IP Address like  " Server now running at http://127.0.0.1:1880/“. Once Node-RED is running, you can access to it pointing your browser at the IP Address. 
 
-###Install Nodes required.
+###Install Required Nodes
+
 You need to install couple extra Nodes to play with Watson and your robot arm. Click the burger menu on top-right side and choose ‘Manage palette’.
 
 Click ‘Install’ tap and type 'node-red-node-watson’ in the search bar. The search screen would show ‘ node-red-node-watson’ node. Install it by clicking a ‘Install’ button.
@@ -122,6 +128,7 @@ Install 'node-red-contrib-browser-utils’ and  'node-red-node-serialport' nod
 You’ll see a ‘Serial’ node and ‘microphone’ node are added in the ‘input’ category. 
 
 ###Set a flow
+
 Now create a flow by adding nodes. Drag and drop an ‘microphone’ node on the flow editor. Then insert a ‘speech to text’ node. Double click the ‘speech to text’ node and set enter your credentials for the service. Uncheck ‘Speaker Labels’ and check ‘Place output on msg.payload’ option.
 
 Connect the ‘microphone’ node and ’speech to text’ nodes. Insert a ‘conversation’ node on the flow editor, then double click and add your credentials for the Conversation service.
@@ -140,6 +147,7 @@ Once the audio has been processed through the entire flow, you should see a debu
 ![screenshot_331](https://user-images.githubusercontent.com/4265959/32201966-15f02e60-bdb0-11e7-9ac2-02df597dd253.png)
 
 Now it’s time to add more nodes to control the robot arm. Insert a ‘function’ node and set up function as below. This will convert each action call from Waston to a number.
+
 ```
 var action = msg.payload.context.arm_action;
 
@@ -174,4 +182,5 @@ Connect the new nodes and click the Deploy button. A ‘connected’ message wou
 
 
 ## Provided Command list for Robot Arm
+
 ![screenshot_346](https://user-images.githubusercontent.com/4265959/32201959-15562f72-bdb0-11e7-9347-e7cda661260c.png)
