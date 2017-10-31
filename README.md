@@ -1,4 +1,4 @@
-#Science and Star Wars Robotic Arm Demo
+Science and Star Wars Robotic Arm Demo
 
 ##Overview:
 
@@ -6,13 +6,13 @@ This demo will help you to build your own robot arm and control it through voice
 
 ## Getting Started
 
-###Setting up your ArbotiX & Arduino Software
+##Setting up your ArbotiX & Arduino Software
 Once you have the arm, follow the ArbotiX Robocontroller Getting Started Guide to setup and program your Arbotix-M Robocontroller.
 
-###Set Dynamical IDs
+##Set Dynamical IDs
 Before starting to assemble the arm, you will need to set DYNAMICAL IDs for all servos. You can learn how to ID servos here. If you have an issue with the DynaManager, There are alternative options like using Arduino library, Dynamical Serial.
 
-###Assemble your robot
+##Assemble your robot
 Follow the detailed instructions for assembling the arm using <a href="http://learn.trossenrobotics.com/projects/165-phantomx-reactor-arm-assembly-guide.html">Trossen’s Assembly Guide</a>. Trossen Robotics provides a <a href="http://learn.trossenrobotics.com/interbotix/robot-arms/17reactor-robot-arm/26-phantomx-reactor-robot-arm-build-check">test program</a> to make sure your robot has been programmed and assembled correctly.
 
 ##Upload code to the arm
