@@ -7,8 +7,6 @@
 
 This demo will help you to build your own robot arm and control it through voice commands with Watson Speech-to-Text and Watson Conversation services.  We will leverage Node-RED, a visual tool for the Internet of Things and the PhantomX Reactor Arm from Trodden Robotics. The PhantomX was designed with entry-level research and university use in mind providing one of the highest featured consumer robotic arms on the market. The Phantom X arm can be ordered here. This demo uses the ‘No Wrist Rotate’ kit type, but the ‘W/ Wrist Rotate’ type can be supported by editing the provided code.
 
-![reac-1](https://user-images.githubusercontent.com/4265959/32201988-17983adc-bdb0-11e7-8f70-ea2ea70eaa09.jpg)
-
 ## Getting Started
 
 ### Setting up your ArbotiX & Arduino Software
