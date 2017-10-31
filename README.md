@@ -35,7 +35,7 @@ The Serial Monitor on Arduino should display control options as below. Type a nu
     
 * Make sure that you have the following prerequisites installed:
     * The [Node.js](https://nodejs.org/#download) runtime, including the [npm][npm_link] package manager
-    * The [Cloud Foundry][cloud_foundry] command-line client
+    * The Cloud Foundry command-line client
 
       Note: Ensure that you Cloud Foundry version is up to date
 
