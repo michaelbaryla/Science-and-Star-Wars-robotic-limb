@@ -23,14 +23,15 @@ Follow the detailed instructions for assembling the arm using <a href="http://le
 
 Download or clone the arduino code within the robotic-arm folder and upload to the Robot Arm. Once the robot is programmed and powered, it moves to center position as ‘Stand by’ pose.
 
-The Serial Monitor on Arduino should display control options as below. Type a letter for each control then you’ll see each action on your arm. Make sure you have ‘9600 baud' for the serial command sender option.
+The Serial Monitor on Arduino should display control options as below. Type a number for each control then you’ll see each action on your arm. Make sure you have ‘9600 baud' for the serial command sender option.
+
 ![screenshot_351](https://user-images.githubusercontent.com/4265959/32201985-175e315c-bdb0-11e7-92ab-e751fb67fd90.png)
 
 
 
 ## Create a Bluemix account
 
-    * [Sign up](https://console.ng.bluemix.net/registration/?target=/catalog/%3fcategory=watson) in Bluemix, or use an existing account. Your account must have available space for at least 1 app and 1 service.
+* <a href="https://console.ng.bluemix.net/registration/?target=/catalog/%3fcategory=watson">Sign up</a> in Bluemix, or use an existing account. Your account must have available space for at least 1 app and 1 service.
     
 * Make sure that you have the following prerequisites installed:
     * The [Node.js](https://nodejs.org/#download) runtime, including the [npm][npm_link] package manager
@@ -43,14 +44,13 @@ The Serial Monitor on Arduino should display control options as below. Type a le
 
 You can use an exisiting instance of the Conversation service. Otherwise, follow these steps.
 
-1. At the command line, go to the local project directory (`conversation-simple`).
+1. Connect to Bluemix with the Cloud Foundry command-line tool. For more information, see the Watson Developer Cloud <a href="https://console.bluemix.net/docs/cli/reference/bluemix_cli/get_started.html#getting-started">documentation</a>.
 
-1. Connect to Bluemix with the Cloud Foundry command-line tool. For more information, see the Watson Developer Cloud [documentation][cf_docs].
     ```bash
     cf login
     ```
 
-1. Create an instance of the Conversation service in Bluemix. For example:
+2. Create an instance of the Conversation service in Bluemix. For example:
 
     ```bash
     cf create-service conversation free my-conversation-service
@@ -58,10 +58,9 @@ You can use an exisiting instance of the Conversation service. Otherwise, follow
 
 ### Importing the Conversation workspace
 
-1. In your browser, navigate to [your Bluemix console] (https://console.ng.bluemix.net/dashboard/services).
+1. In your browser, navigate to your Bluemix <a href="https://console.ng.bluemix.net/dashboard/services">console</a>.
 
 2. From the **All Items** tab, click the newly created Conversation service in the **Services** list.
-
 
 3. On the Service Details page, click **Launch tool**.
 
@@ -89,13 +88,12 @@ You can use an exisiting instance of the Conversation service. Otherwise, follow
 
 7. Paste  the `password` and `username` values (without quotation marks) from the JSON into a scratch file for use within Node-RED.
 
-
-8. Create and retrieve service keys to access the [Speech to Text][service_url] service:
+8. Create a Speech-to-Text service instance and retrieve service keys to access the service:
 
   ```none
-  cf create-service speech_to_text standard my-stt-service
-  cf create-service-key my-stt-service myKey
-  cf service-key my-stt-service myKey
+  cf create-service speech_to_text standard robot-stt-service
+  cf create-service-key robot-stt-service myKey
+  cf service-key robot-stt-service myKey
   ```
 
 9. Save  the `password` and `username` values (without quotation marks) for your credentials into a scratch file for use within Node-RED.
@@ -105,7 +103,7 @@ You can use an exisiting instance of the Conversation service. Otherwise, follow
 
 Node-RED is a visual programing tool that you can use to develop your applications, devices and gateways on IBM Watson IoT platform. Node-RED provides capabilities for connecting hardware, APIs and online services in new and interesting ways.
 
-Node-RED is built on top of Node.js so you need to install both Node JS and Node-RED on your computer. Please follow this Installation guide. After done, restart your computer.
+Node-RED is built on top of Node.js so you need to install both Node JS and Node-RED on your computer. Please follow this <a href="https://nodered.org/docs/getting-started/installation">Installation guide</a>. After done, restart your computer.
 
 Open Terminal application and type ‘node-red’. This would launch Node-Red.
 ```bash
@@ -113,17 +111,18 @@ Open Terminal application and type ‘node-red’. This would launch Node-Red.
    ```
    
 
-You’ll see a Server IP Address like  " Server now running at http://127.0.0.1:1880/“. Once Node-RED is running, you can access to it pointing your browser at the IP Address. 
+You’ll see a Server IP Address like  " Server now running at http://127.0.0.1:1880/“. Once Node-RED is running, you can access it by pointing your browser at the IP Address. 
 
 ### Install Required Nodes
 
-You need to install couple extra Nodes to play with Watson and your robot arm. Click the burger menu on top-right side and choose ‘Manage palette’.
+You need to install several Nodes to use Watson with your robot arm. Click the hamburger menu on top-right side and choose ‘Manage palette’.
 
 Click ‘Install’ tap and type 'node-red-node-watson’ in the search bar. The search screen would show ‘ node-red-node-watson’ node. Install it by clicking a ‘Install’ button.
 
 After installing 'node-red-node-watson’ node successfully, you’ll see installed nodes under ‘IBM Watson’ category.
 
 Install 'node-red-contrib-browser-utils’ and  'node-red-node-serialport' node in the same way.
+
 You’ll see a ‘Serial’ node and ‘microphone’ node are added in the ‘input’ category. 
 
 ### Set a flow
@@ -141,8 +140,7 @@ return msg;
 
 Insert a debug node after your Action Handler.
 
-Click on the deploy button on the right corner. The flow should now be working. Click the ‘microphone’ node to start recording a speech, then speak ‘body left’ to your microphone. Click the ‘microphone’ node again to stop recording.
-Once the audio has been processed through the entire flow, you should see a debug result at the debug’ panel.
+Click on the deploy button on the right corner. The flow should now be working. Click the ‘microphone’ node to start recording a speech, then speak ‘body left’ to your microphone. Click the ‘microphone’ node again to stop recording. Once the audio has been processed through the entire flow, you should see a debug result at the debug’ panel.
 
 ![screenshot_331](https://user-images.githubusercontent.com/4265959/32201966-15f02e60-bdb0-11e7-9ac2-02df597dd253.png)
 
