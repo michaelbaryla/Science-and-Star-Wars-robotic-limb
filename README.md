@@ -4,6 +4,8 @@ Science and Star Wars Robotic Arm Demo
 
 This demo will help you to build your own robot arm and control it through voice commands with Watson Speech-to-Text and Watson Conversation services.  We will leverage Node-RED, a visual tool for the Internet of Things and the PhantomX Reactor Arm from Trodden Robotics. The PhantomX was designed with entry-level research and university use in mind providing one of the highest featured consumer robotic arms on the market. The Phantom X arm can be ordered here. This demo uses the ‘No Wrist Rotate’ kit type, but the ‘W/ Wrist Rotate’ type can be supported by editing the provided code.
 
+
+
 ## Getting Started
 
 ## Setting up your ArbotiX & Arduino Software
@@ -112,7 +114,8 @@ Node-RED is built on top of Node.js so you need to install both Node JS and Node
 Open Terminal application and type ‘node-red’. This would launch Node-Red.
 ```bash
     node-red
-    ```
+   ```
+   
 
 You’ll see a Server IP Address like  " Server now running at http://127.0.0.1:1880/“. Once Node-RED is running, you can access to it pointing your browser at the IP Address. 
 
@@ -134,6 +137,7 @@ Now create a flow by adding nodes. Drag and drop an ‘microphone’ node on th
 Connect the ‘microphone’ node and ’speech to text’ nodes. Insert a ‘conversation’ node on the flow editor, then double click and add your credentials for the Conversation service.
 
 Add Conversation to the connected chain you already have, after Speech-to-Text. Insert a ‘function’ node and set up function as below. This would save a recorded voice command and an arm action translated by Watson into msg.preload.
+
 ```
 msg.payload = {"speech":msg.payload.input.text, "action":msg.payload.context.arm_action};
 return msg;
