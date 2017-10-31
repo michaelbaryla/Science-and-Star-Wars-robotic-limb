@@ -1,23 +1,23 @@
 Science and Star Wars Robotic Arm Demo
 
-##Overview
+## Overview
 
 This demo will help you to build your own robot arm and control it through voice commands with Watson Speech-to-Text and Watson Conversation services.  We will leverage Node-RED, a visual tool for the Internet of Things and the PhantomX Reactor Arm from Trodden Robotics. The PhantomX was designed with entry-level research and university use in mind providing one of the highest featured consumer robotic arms on the market. The Phantom X arm can be ordered here. This demo uses the ‘No Wrist Rotate’ kit type, but the ‘W/ Wrist Rotate’ type can be supported by editing the provided code.
 
 ## Getting Started
 
-##Setting up your ArbotiX & Arduino Software
+## Setting up your ArbotiX & Arduino Software
 Once you have the arm, follow the ArbotiX Robocontroller Getting Started Guide to setup and program your Arbotix-M Robocontroller.
 
 ##Set Dynamical IDs
 
 Before starting to assemble the arm, you will need to set DYNAMICAL IDs for all servos. You can learn how to ID servos here. If you have an issue with the DynaManager, There are alternative options like using Arduino library, Dynamical Serial.
 
-##Assemble your robot
+## Assemble your robot
 
 Follow the detailed instructions for assembling the arm using <a href="http://learn.trossenrobotics.com/projects/165-phantomx-reactor-arm-assembly-guide.html">Trossen’s Assembly Guide</a>. Trossen Robotics provides a <a href="http://learn.trossenrobotics.com/interbotix/robot-arms/17reactor-robot-arm/26-phantomx-reactor-robot-arm-build-check">test program</a> to make sure your robot has been programmed and assembled correctly.
 
-##Upload code to the arm
+## Upload code to the arm
 
 Download or clone the arduino code within the robotic-arm folder and upload to the Robot Arm. Once the robot is programmed and powered, it moves to center position as ‘Stand by’ pose.
 
@@ -26,7 +26,7 @@ The Serial Monitor on Arduino should display control options as below. Type a le
 
 
 
-##Create a Bluemix account
+## Create a Bluemix account
 
     * [Sign up](https://console.ng.bluemix.net/registration/?target=/catalog/%3fcategory=watson) in Bluemix, or use an existing account. Your account must have available space for at least 1 app and 1 service.
     
@@ -103,7 +103,7 @@ You can use an exisiting instance of the Conversation service. Otherwise, follow
 9. Save  the `password` and `username` values (without quotation marks) for your credentials into a scratch file for use within Node-RED.
 
 
-##Setup Node-RED with IBM Watson
+## Setup Node-RED with IBM Watson
 
 Node-RED is a visual programing tool that you can use to develop your applications, devices and gateways on IBM Watson IoT platform. Node-RED provides capabilities for connecting hardware, APIs and online services in new and interesting ways.
 
@@ -116,7 +116,7 @@ Open Terminal application and type ‘node-red’. This would launch Node-Red.
 
 You’ll see a Server IP Address like  " Server now running at http://127.0.0.1:1880/“. Once Node-RED is running, you can access to it pointing your browser at the IP Address. 
 
-###Install Required Nodes
+### Install Required Nodes
 
 You need to install couple extra Nodes to play with Watson and your robot arm. Click the burger menu on top-right side and choose ‘Manage palette’.
 
@@ -127,7 +127,7 @@ After installing 'node-red-node-watson’ node successfully, you’ll see instal
 Install 'node-red-contrib-browser-utils’ and  'node-red-node-serialport' node in the same way.
 You’ll see a ‘Serial’ node and ‘microphone’ node are added in the ‘input’ category. 
 
-###Set a flow
+### Set a flow
 
 Now create a flow by adding nodes. Drag and drop an ‘microphone’ node on the flow editor. Then insert a ‘speech to text’ node. Double click the ‘speech to text’ node and set enter your credentials for the service. Uncheck ‘Speaker Labels’ and check ‘Place output on msg.payload’ option.
 
@@ -167,6 +167,7 @@ else if(action == "light_saber") msg.payload = "a";
 else msg.payload = "-1";
 return msg;
 ```
+
 Insert a ‘switch’ node and setup function as below. This switch will handle action data from previous function node.
 
 ![screenshot_333](https://user-images.githubusercontent.com/4265959/32201964-15c0d688-bdb0-11e7-93c8-5d61bdd9a6a0.png)
