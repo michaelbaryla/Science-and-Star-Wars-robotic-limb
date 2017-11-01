@@ -5,16 +5,16 @@
 
 ## Overview
 
-This demo will help you to build your own robot arm and control it through voice commands with Watson Speech-to-Text and Watson Conversation services.  We will leverage Node-RED, a visual tool for the Internet of Things and the PhantomX Reactor Arm from Trodden Robotics. The PhantomX was designed with entry-level research and university use in mind providing one of the highest featured consumer robotic arms on the market. The Phantom X arm can be ordered here. This demo uses the ‘No Wrist Rotate’ kit type, but the ‘W/ Wrist Rotate’ type can be supported by editing the provided code.
+This demo will help you to build your own robot arm and control it through voice commands with Watson Speech-to-Text and Watson Conversation services.  We will leverage Node-RED, a visual tool for the Internet of Things and the PhantomX Reactor Arm from Trodden Robotics. The PhantomX was designed with entry-level research and university use in mind providing one of the highest featured consumer robotic arms on the market. The Phantom X arm can be <a href="http://www.trossenrobotics.com/p/phantomx-ax-12-reactor-robot-arm.aspx">ordered here</a>. This demo uses the ‘No Wrist Rotate’ kit type, but the ‘W/ Wrist Rotate’ type can be supported by editing the provided code.
 
 ## Getting Started
 
 ### Setting up your ArbotiX & Arduino Software
-Once you have the arm, follow the ArbotiX Robocontroller Getting Started Guide to setup and program your Arbotix-M Robocontroller.
+Once you have the arm, follow the ArbotiX Robocontroller <a href="http://learn.trossenrobotics.com/arbotix/arbotix-quick-start.html">Getting Started Guide</a> to setup and program your Arbotix-M Robocontroller.
 
 ### Set Dynamic IDs
 
-Before starting to assemble the arm, you will need to set DYNAMICAL IDs for all servos. You can learn how to ID servos here. If you have an issue with the DynaManager, There are alternative options like using Arduino library, Dynamical Serial.
+Before starting to assemble the arm, you will need to set DYNAMIC IDs for all servos. You can learn how to ID servos <a href="http://learn.trossenrobotics.com/index.php/getting-started-with-the-arbotix/1-using-the-tr-dynamixel-servo-tool#&panel1-1">here</a>. If you have an issue with the DynaManager, There are alternative options like using Arduino library, <a href="https://github.com/zcshiner/Dynamixel_Serial">Dynamixal Serial</a>.
 
 ### Assemble your robot
 
@@ -30,9 +30,9 @@ The Serial Monitor on Arduino should display control options as below. Type a nu
 
 
 
-## Create a Bluemix account
+## Create an IBM Cloud account
 
-* <a href="https://console.ng.bluemix.net/registration/?target=/catalog/%3fcategory=watson">Sign up</a> in Bluemix, or use an existing account. Your account must have available space for at least 1 app and 1 service.
+* <a href="https://console.ng.bluemix.net/registration/?target=/catalog/%3fcategory=watson">Sign up</a> in IBM Cloud, or use an existing account. Your account must have available space for at least 1 app and 1 service.
     
 * Make sure that you have the following prerequisites installed:
     * The [Node.js](https://nodejs.org/#download) runtime, including the [npm][npm_link] package manager
@@ -45,13 +45,13 @@ The Serial Monitor on Arduino should display control options as below. Type a nu
 
 You can use an exisiting instance of the Conversation service. Otherwise, follow these steps.
 
-1. Connect to Bluemix with the Cloud Foundry command-line tool. For more information, see the Watson Developer Cloud <a href="https://console.bluemix.net/docs/cli/reference/bluemix_cli/get_started.html#getting-started">documentation</a>.
+1. Connect to IBM Cloud with the Cloud Foundry command-line tool. For more information, see the Watson Developer Cloud <a href="https://console.bluemix.net/docs/cli/reference/bluemix_cli/get_started.html#getting-started">documentation</a>.
 
     ```bash
     cf login
     ```
 
-2. Create an instance of the Conversation service in Bluemix. For example:
+2. Create an instance of the Conversation service in IBM Cloud. For example:
 
     ```bash
     cf create-service conversation free my-conversation-service
@@ -59,7 +59,7 @@ You can use an exisiting instance of the Conversation service. Otherwise, follow
 
 ### Importing the Conversation workspace
 
-1. In your browser, navigate to your Bluemix <a href="https://console.ng.bluemix.net/dashboard/services">console</a>.
+1. In your browser, navigate to your IBM Cloud <a href="https://console.ng.bluemix.net/dashboard/services">console</a>.
 
 2. From the **All Items** tab, click the newly created Conversation service in the **Services** list.
 
