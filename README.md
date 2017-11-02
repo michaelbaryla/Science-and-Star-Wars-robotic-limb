@@ -1,6 +1,4 @@
 
-![starwars-logo](https://user-images.githubusercontent.com/4265959/32240978-396e87f2-be45-11e7-9704-4177ce32bb7d.png)
-
 # Science and Star Wars Robotic Arm Demo
 
 ## Overview
